@@ -1,0 +1,36 @@
+body {
+  margin: 0 auto;
+  
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50rem;
+  margin-left: 50rem;
+  text-align: center;
+}
+
+button { 
+  padding-top: 0.66rem;
+  padding-bottom: 0.66rem;
+  padding-left: 0.66rem;
+  padding-right: 0.66rem;
+  margin-right: 6rem;
+  margin-left: 6rem;
+  color: black;
+  border-radius: 1rem;
+  border: none;
+}
+
+.main-container__run-button {
+  background: linear-gradient(135deg, #F4C30F, #E27341);
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.16s;
+}
+
+.main-container__run-button:hover {
+  opacity: 80%;
+}
