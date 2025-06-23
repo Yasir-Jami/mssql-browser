@@ -7,6 +7,8 @@
     <title>SQL Practice</title>
   </head>
     <body>
+
+      <!--Main Container-->
       <form class="main-container">
         <h1 class="main-container__header">Run SQL Commands</h1>
         <h2 class="main-container__description">Enter an SQL command</h2>
@@ -14,12 +16,15 @@
         <button class="main-container__run-button" type="submit">Run SQL</button>
       </form>
 
-      <form class="radio-buttons">
-        <input type="radio" name="query" placeholder="logs" value="HTML">
-        <input type="radio" name="query" value="HTML">
-        <div className="query-results-container"></div>
-        <div className="query-log-container"></div>
-      </form>
+      <!--Query Container-->
+      <div class="query-container">
+        <label>Query Results</label><br>
+        <input type="radio" name="query" class="query-container__results-radio-button">
+        <label>Query Logs</label><br>
+        <input type="radio" name="query" class="query-container__logs-radio-button">
+        <div className="query-container__results-display"></div>
+        <div className="query-container__logs-display"></div>
+      </div>
       
     </body>
   <script src="main.js"></script>
