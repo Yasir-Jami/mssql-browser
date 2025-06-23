@@ -3,14 +3,6 @@ body {
   
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  margin-right: 50rem;
-  margin-left: 50rem;
-  text-align: center;
-}
-
 button { 
   padding-top: 0.66rem;
   padding-bottom: 0.66rem;
@@ -23,6 +15,27 @@ button {
   border: none;
 }
 
+/* Main Container */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50rem;
+  margin-left: 50rem;
+  text-align: center;
+}
+
+.main-container__description {
+
+}
+
+.main-container__text-area {
+  margin-bottom: 1rem;
+  padding-bottom: 5rem;
+  border: solid;
+  text-wrap: initial;
+}
+
 .main-container__run-button {
   background: linear-gradient(135deg, #F4C30F, #E27341);
   color: black;
@@ -33,4 +46,8 @@ button {
 
 .main-container__run-button:hover {
   opacity: 80%;
+}
+
+.row-container {
+  display: none;
 }

@@ -2,19 +2,25 @@
 <html>
   <link rel="stylesheet" href="./index.css">
   <head>
-
-  </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL Practice</title>
+  </head>
     <body>
-      
-      <div class="main-container">
-        <h1 class="main-container__h1">Run SQL Commands</h1>
-        
-        <button class="main-container__run-button">Run SQL</button>
-      </div>
-      
+      <form class="main-container">
+        <h1 class="main-container__header">Run SQL Commands</h1>
+        <h2 class="main-container__description">Enter an SQL command</h2>
+        <textarea class="main-container__text-area"></textarea>
+        <button class="main-container__run-button" type="submit">Run SQL</button>
+      </form>
 
-
+      <form class="radio-buttons">
+        <input type="radio" name="query" placeholder="logs" value="HTML">
+        <input type="radio" name="query" value="HTML">
+        <div className="query-results-container"></div>
+        <div className="query-log-container"></div>
+      </form>
+      
     </body>
-  <script src="index.js"></script>
+  <script src="main.js"></script>
 </html>
