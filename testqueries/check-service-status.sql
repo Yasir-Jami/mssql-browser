@@ -1,0 +1,1 @@
+EXEC xp_readerrorlog 0, 1, N'MSSQLSERVER', NULL, NULL, NULL, N'DESC';

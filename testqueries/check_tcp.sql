@@ -1,0 +1,1 @@
+EXEC xp_readerrorlog 0, 1, N'TCP/IP', NULL, NULL, NULL, N'desc';
