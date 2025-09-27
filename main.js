@@ -1,27 +1,32 @@
-const sqlQueryField = document.querySelector(".main-container__input-field");
-const runButton = document.querySelector(".main-container__run-button");
-const sqlForm = document.querySelector(".main-container");
-const queryResultsRadioButton = document.querySelector(".query-container__logs-radio-button");
-const queryLogsRadioButton = document.querySelector(".query-container__results-radio-button");
+const sqlQueryField = $(".main-container__input-field");
+const runButton = $(".main-container__run-button");
+const sqlForm = $(".main-container");
+const queryResultsRadioButton = $(".query-container__results-radio-button");
+const queryLogsRadioButton = $(".query-container__logs-radio-button");
 
 const rawQueryUrl = "http://localhost:3000/rawquery";
 const storedProcedureUrl = "http://localhost:3000/storedprocedure";
 
 // Submit action
-sqlForm.addEventListener("submit", async (e) => {
+sqlForm.on("submit", async (e) => {
   e.preventDefault(); // prevent form submission
-  const textarea = document.querySelector(".main-container__text-area");
+  const textarea = $(".main-container__text-area");
   if (textarea.value.length == 0) throw new Error("No text inputted");
   const userText = textarea.value;
 
+  // Headers
   const headers = new Headers();  
   headers.append("Content-Type", "application/json");
   headers.append("Accept", "application/json");
+  // Run function and wait for results
   const result = await getQueryResults(userText, headers);
+  console.log(result);
 
   if (result) {
-    //queryResultsRadioButton.setAttribute('display') = true;
+    queryResultsRadioButton.show();
+    queryLogsRadioButton.show();
     textarea.value = ''; // Clear text on successful query
+    displayQueryResults(result);
     
     //createLogEntry(userText);
     //displayQueryResults(result);
@@ -57,23 +62,27 @@ async function getQueryResults(userQuery, headers) {
 }
 
 // Query Container Methods
-queryResultsRadioButton.addEventListener("click", () => {
+queryResultsRadioButton.on("click", () => {
   console.log("Results selected");
-  // Display populated rows
+  // Display query results
 });
 
-queryLogsRadioButton.addEventListener("click", () => {
+queryLogsRadioButton.on("click", () => {
   console.log("Logs selected");
   // Display logs
 });
 
+// Create table and populate rows
 function displayQueryResults(queryResult) {
-
+  // Should probably limit to first 100 results and allow user to show more
+  const records = queryResult.recordsets; // Array of records
+  const container = $(".query-container__results-rows");
+  
 }
 
 
 function createLogEntry(query) {
-  // Clean up query - clear any newlines or replace with line breaks
+  // Clean up query text - clear any newlines or replace with line breaks
   console.log(query);
   
 }

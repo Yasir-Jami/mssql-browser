@@ -1,0 +1,25 @@
+console.log(result.recordset); // Contains all retrieved records - e.g., recordset[0] to get first record
+console.log(result.recordsets); // Array containing records
+console.log(result.rowsAffected[0]); // Rows affected
+
+
+// HTML Table Example
+let tableHTML = '<table border="1"><tr>';
+
+            Object.keys(records[0]).forEach(key => {
+                tableHTML += `<th>${key}</th>`;
+            });
+
+            tableHTML += '</tr>';
+
+            records.forEach(item => {
+                tableHTML += '<tr>';
+                Object.values(item).forEach(value => {
+                    tableHTML += `<td>${value}</td>`;
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</table>';
+
+            document.body.innerHTML += tableHTML;
